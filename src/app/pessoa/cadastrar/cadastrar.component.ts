@@ -30,6 +30,10 @@ export class CadastrarComponent implements OnInit {
     }
   }
 
+  enviar(){
+    console.log(this.form.value);
+  }
+
   openSnackBar(message: string, action: string) {
     this.snack.open(message, action, {
       duration: 3000,
