@@ -1,0 +1,24 @@
+<div>
+  <button mat-raised-button color="primary" (click)="validarCampos()">
+    Retirar Realce de validação (Untouch)
+  </button> (Este botão pertence ao componente azul)
+  <br>
+  <br>
+  <button mat-raised-button color="primary" (click)="addItem()">
+    Add Phone
+  </button> (Este botão pertence ao componente azul)
+  <form [formGroup]="formGroupOriginal">
+    <mat-card id="telefones">
+        <div formArrayName="telefones"
+        *ngFor="let item of formArray.controls; let i = index;">
+          <div [formGroup]="item">
+            <mat-form-field appearance="fill">
+              <mat-label>Contato {{i+1}}</mat-label>
+              <input matInput formControlName="contato" />
+            </mat-form-field>
+            <br><br>
+          </div>
+        </div>
+      </mat-card>
+  </form>
+</div>
